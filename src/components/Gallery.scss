@@ -7,21 +7,25 @@
 
 // Configuring Susy Defaults
 $susy: (
-  global-box-sizing: border-box,
-  use-custom: (rem: true)
+  columns: 4,
+  gutters: .25,
+  global-box-sizing: border-box
 );
 
 @include border-box-sizing;
 
-html,
 body {
-  height: 100%;
-}
-
-body {
-  @include container(80em);
   color: #333;
   font-family: 'Open Sans','sans-serif';
   font-size: 16px;
   line-height: 1.5;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+}
+
+.gallery {
+  @include container(80em);
 }

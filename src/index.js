@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import Gallery from './components/Gallery.react';
 
 ReactDOM.render(
-  <Gallery />,
+  <div className="container">
+    <header>
+      <img src="assets/images/header.jpg"/>
+    </header>
+    <Gallery/>
+  </div>,
   document.getElementById('root')
 );
