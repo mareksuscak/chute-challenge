@@ -8,4 +8,4 @@ In order to run the project you'll need Node.js 4.x LTS with pretty much any ver
 npm install && npm start
 ```
 
-Navigate to http://localhost:8000/
+Navigate to [http://localhost:8000](http://localhost:8000).
