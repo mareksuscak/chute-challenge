@@ -1,7 +1,7 @@
 {
-  "name": "chute-challenge",
+  "name": "surfing-gallery",
   "version": "0.0.0",
-  "description": "Chute Challenge",
+  "description": "Surfing Gallery - React Demo",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
