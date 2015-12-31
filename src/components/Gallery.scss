@@ -1,18 +1,13 @@
 // Remember to use rems and ems. http://css-tricks.com/rems-ems.
 
-@import '~susy/sass/susy';
 @import '~normalize.css/normalize';
 @import '~font-awesome/css/font-awesome.css';
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-// Configuring Susy Defaults
-$susy: (
-  columns: 4,
-  gutters: .25,
-  global-box-sizing: border-box
-);
-
-@include border-box-sizing;
+// Goodness.
+*, ::after, ::before {
+  box-sizing: border-box;
+}
 
 body {
   color: #333;
@@ -27,5 +22,5 @@ header img {
 }
 
 .gallery {
-  @include container(80em);
+
 }
