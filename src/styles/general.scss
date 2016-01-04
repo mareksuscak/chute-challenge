@@ -1,0 +1,24 @@
+// Remember to use rems and ems. http://css-tricks.com/rems-ems.
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+// Goodness. https://github.com/AllThingsSmitty/css-protips#inherit-box-sizing
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: #333;
+  font-family: 'Open Sans','sans-serif';
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+}
