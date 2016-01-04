@@ -1,3 +1,6 @@
+import 'normalize.css';
+import './styles/general.scss';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Gallery from './components/Gallery.react';
