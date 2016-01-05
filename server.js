@@ -11,7 +11,7 @@ var compiler = webpack(config);
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
 app.use(webpackHotMiddleware(compiler));
 
-app.use('/assets/images', express.static('assets/images', {maxAge: '200d'}));
+app.use('/assets', express.static('assets', {maxAge: '200d'}));
 
 app.get("*", function(req, res) {
   res.sendFile(__dirname + '/index.html');

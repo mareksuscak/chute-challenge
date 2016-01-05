@@ -9,7 +9,7 @@ import GalleryContainer from './components/GalleryContainer.react';
 ReactDOM.render(
   <div className="container">
     <header>
-      <img src="assets/images/header.jpg"/>
+      <img src="assets/image/header.jpg"/>
     </header>
     <GalleryContainer/>
   </div>,
