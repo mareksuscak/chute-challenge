@@ -18,8 +18,15 @@ export default {
         .withCredentials()
         .accept('json')
         .end((err, res) => {
-          if (err || !res.ok) reject(err);
-          else resolve(res.body);
+          if (err || !res.ok) {
+            reject(err);
+          } else {
+            // Despite providing "Accept: application/json" header
+            // Chute's API returns "Content-Type: text/html" therefore
+            // superagent is unable to automatically parse res.text
+            // into res.body.
+            resolve(JSON.parse(res.text));
+          }
         });
     });
   },
