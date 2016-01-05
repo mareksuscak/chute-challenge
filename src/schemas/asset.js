@@ -1,8 +1,13 @@
 import { PropTypes } from 'react';
 
 export default {
-  author: PropTypes.string,
-  source: PropTypes.oneOf(['instagram', 'twitter', 'uploaded']),
-  href: PropTypes.string,
-  description: PropTypes.string,
+  shortcut: PropTypes.string.isRequired,
+  author: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    avatarUrl: PropTypes.string.isRequired,
+  }).isRequired,
+  service: PropTypes.oneOf(['instagram', 'twitter', 'uploaded']).isRequired,
+  importUrl: PropTypes.string,
+  url: PropTypes.string.isRequired,
+  caption: PropTypes.string,
 };
