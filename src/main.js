@@ -3,14 +3,14 @@ import './styles/general.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Gallery from './components/Gallery.react';
+import GalleryContainer from './components/GalleryContainer.react';
 
 ReactDOM.render(
   <div className="container">
     <header>
       <img src="assets/images/header.jpg"/>
     </header>
-    <Gallery/>
+    <GalleryContainer/>
   </div>,
   document.getElementById('root')
 );
