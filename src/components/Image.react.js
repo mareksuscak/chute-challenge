@@ -11,7 +11,9 @@ class Image extends Component {
     return (
       <article className="image">
         <header>
-          <img src="https://media.getchute.com/m/12I4gudgjf/c/2500342/315x150"/>
+          <a href="https://media.getchute.com/m/12I4gudgjf/c/2500342/315x150">
+            <img src="https://media.getchute.com/m/12I4gudgjf/c/2500342/315x150"/>
+          </a>
         </header>
 
         <section className="">

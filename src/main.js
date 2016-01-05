@@ -1,5 +1,6 @@
 import 'normalize.css';
 import './styles/general.scss';
+import 'baguettebox.js/dist/baguettebox.min.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
