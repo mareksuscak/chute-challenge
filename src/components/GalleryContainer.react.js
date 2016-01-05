@@ -21,7 +21,25 @@ class GalleryContainer extends Component {
   }
 
   processApiResponse(response) {
-    // TODO
+    const newAssets = map(response.data, (asset) => {
+      return {
+        author: {
+          username: asset.user.username,
+          avatarUrl: asset.user.avatar,
+        },
+        service: asset.source.service,
+        importUrl: asset.source.import_url,
+        url: asset.url,
+        caption: asset.caption,
+        shortcut: asset.shortcut,
+      };
+    });
+
+    const assets = this.state.assets
+      .slice()
+      .concat(newAssets);
+
+    this.setState({ assets });
   }
 
   updatePageCount(response) {
@@ -37,10 +55,13 @@ class GalleryContainer extends Component {
   }
 
   loadMore() {
-    AlbumApi.fetchAssets('aACiujyl', { page: this.state.loadedPageCount + 1 })
-      .then(this.processApiResponse)
-      .then(this.updatePageCount)
-      .catch(this.handleApiError);
+    const opts = {
+      page: this.state.loadedPageCount + 1,
+    };
+    AlbumApi.fetchAssets('aACiujyl', opts)
+      .then((r) => this.processApiResponse(r))
+      .then((r) => this.updatePageCount(r))
+      .catch((r) => this.handleApiError(r));
   }
 
   render() {
