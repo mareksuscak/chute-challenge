@@ -6,6 +6,13 @@ import classNames from 'classnames';
 class Image extends Component {
   constructor(props, context) {
     super(props, context);
+    this.state = {
+      removed: false,
+    };
+  }
+
+  handleImageRemoved() {
+    this.setState({ removed: true });
   }
 
   renderServiceIcon() {
@@ -16,11 +23,14 @@ class Image extends Component {
   }
 
   render() {
+    const className = classNames('image', {
+      '-removed': this.state.removed,
+    });
     return (
-      <article className="image">
+      <article className={className}>
         <header>
           <a href={this.props.url}>
-            <img src={`${this.props.url}/315x150`}/>
+            <img src={`${this.props.url}/315x150`} onError={() => this.handleImageRemoved()}/>
           </a>
         </header>
 
