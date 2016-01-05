@@ -1,5 +1,5 @@
 import 'normalize.css';
-import '../assets/css/general.scss';
+import './main.scss';
 import '../assets/css/animation.css';
 import '../assets/css/fontello.css';
 import 'baguettebox.js/dist/baguettebox.min.css';
