@@ -23,7 +23,7 @@ class Gallery extends Component {
 
   renderAssetCollection() {
     return map(this.props.assets, (asset) =>
-      <Image {...asset} key={asset.id}/>
+      <Image {...asset} key={asset.shortcut}/>
     );
   }
 
@@ -37,7 +37,7 @@ class Gallery extends Component {
 }
 
 Gallery.propTypes = {
-  assets: PropTypes.arrayOf(PropTypes.shape(AssetSchema)),
+  assets: PropTypes.arrayOf(PropTypes.shape(AssetSchema)).isRequired,
 };
 
 export default Gallery;
