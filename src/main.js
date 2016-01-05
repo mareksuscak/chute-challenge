@@ -1,7 +1,7 @@
 import 'normalize.css';
 import '../assets/css/general.scss';
-import '../assets/css/animation.scss';
-import '../assets/css/fontello.scss';
+import '../assets/css/animation.css';
+import '../assets/css/fontello.css';
 import 'baguettebox.js/dist/baguettebox.min.css';
 
 import React from 'react';
