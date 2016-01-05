@@ -9,3 +9,11 @@ npm install && npm start
 ```
 
 Navigate to [http://localhost:8000](http://localhost:8000).
+
+# Updating fontello
+
+Modify `vendor/fontello/config.json` to your needs and run
+
+```shell
+npm run fontello:update
+```

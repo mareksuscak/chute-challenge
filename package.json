@@ -7,7 +7,8 @@
     "start": "node server.js",
     "test": "NODE_ENV=test mocha --recursive --compilers js:babel-core/register --require ./test/setup.js",
     "test:watch": "npm run test -- --watch",
-    "eslint": "eslint ./src"
+    "eslint": "eslint ./src",
+    "fontello:update": "fontello-cli --config ./vendor/fontello/config.json --css ./vendor/fontello/css/ --font ./vendor/fontello/font/ install"
   },
   "repository": {
     "type": "git",
@@ -48,6 +49,7 @@
     "eslint-plugin-react": "^3.13.1",
     "express": "^4.13.3",
     "file-loader": "^0.8.5",
+    "fontello-cli": "^0.4.0",
     "jsdom": "^7.2.2",
     "mocha": "^2.3.4",
     "node-sass": "^3.4.2",
