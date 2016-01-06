@@ -24,6 +24,10 @@ module.exports = {
       { test: /\.(ttf|eot|svg)(\?[0-9]+)?$/, loader: 'file-loader' },
       { test: /\.(gif|jpg|png)$/, loader: 'url-loader?limit=10000' },
       { test: /\.js$/, loader: 'babel', exclude: /node_modules/, include: __dirname },
+      {
+        test: /masonry|imagesloaded|fizzy\-ui\-utils|desandro\-|outlayer|get\-size|doc\-ready|eventie|eventemitter/,
+        loader: 'imports?define=>false&this=>window'
+      },
       { test: /\.scss$/, loader: 'style-loader!css-loader!postcss-loader!sass-loader' },
       { test: /\.css$/, loader: 'style-loader!css-loader!postcss-loader' }
     ]

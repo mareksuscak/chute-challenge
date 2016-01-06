@@ -3,7 +3,14 @@ import React, { Component, PropTypes } from 'react';
 import Image from './Image.react';
 import map from 'lodash/collection/map';
 import AssetSchema from '../schemas/asset';
-import BaguetteBox from 'baguettebox.js';
+// import BaguetteBox from 'baguettebox.js';
+import Masonry from 'react-masonry-component';
+
+const masonryOptions = {
+  itemSelector: '.image',
+  columnWidth: 315,
+  gutter: 35,
+};
 
 class Gallery extends Component {
   constructor(props, context) {
@@ -11,14 +18,14 @@ class Gallery extends Component {
   }
 
   componentDidMount() {
-    BaguetteBox.run('.image header', {
+    /* BaguetteBox.run('.image header', {
       // Pick up all links from the header no matter what the href is holding.
       filter: /.+/i,
-    });
+    });*/
   }
 
   componentWillUnmount() {
-    BaguetteBox.destroy();
+    // BaguetteBox.destroy();
   }
 
   renderAssetCollection() {
@@ -29,9 +36,14 @@ class Gallery extends Component {
 
   render() {
     return (
-      <section className="gallery">
+      <Masonry
+        className={'gallery'}
+        elementType={'section'}
+        options={masonryOptions}
+        disableImagesLoaded={false}
+      >
         {this.renderAssetCollection()}
-      </section>
+      </Masonry>
     );
   }
 }
