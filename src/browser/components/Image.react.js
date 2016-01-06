@@ -4,12 +4,9 @@ import AssetSchema from '../schemas/asset';
 import classNames from 'classnames';
 
 class Image extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      removed: false,
-    };
-  }
+  state = {
+    removed: false,
+  };
 
   handleImageRemoved() {
     this.setState({ removed: true });

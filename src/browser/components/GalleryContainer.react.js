@@ -7,15 +7,12 @@ import map from 'lodash/collection/map';
 // Container component inspired by:
 // https://medium.com/@learnreact/container-components-c0e67432e005#.rkxj8u626
 class GalleryContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      assets: [],
-      loadedPageCount: 0,
-      hasMorePages: false,
-      tags: '',
-    };
-  }
+  state = {
+    assets: [],
+    loadedPageCount: 0,
+    hasMorePages: false,
+    tags: '',
+  };
 
   componentWillMount() {
     this.loadMore(); // Load the first batch
