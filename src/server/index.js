@@ -8,11 +8,11 @@ var args = yargs
   .alias('p', 'production')
   .argv;
 
-process.env.NODE_ENV = args.production ? 'production' : 'development';
-console.log('NODE_ENV => ', process.env.NODE_ENV);
-
 var app = new express();
 var port = 8000;
+
+process.env.NODE_ENV = args.production ? 'production' : 'development';
+console.log('NODE_ENV => ', process.env.NODE_ENV);
 
 // In development mode serve the scripts using webpack-dev-middleware
 if (process.env.NODE_ENV === 'development') {
