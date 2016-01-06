@@ -4,7 +4,10 @@
   "description": "Surfing Gallery - React Demo",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node src/server",
+    "start-dev": "npm start",
+    "start-prod": "npm run build && npm start -- -p",
+    "build": "rm -rf ./dist/** && NODE_ENV=production webpack",
     "test": "NODE_ENV=test mocha --recursive --compilers js:babel-core/register --require ./test/setup.js",
     "test:watch": "npm run test -- --watch",
     "eslint": "eslint ./src",
@@ -62,6 +65,7 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
     "webpack-dev-middleware": "^1.4.0",
-    "webpack-hot-middleware": "^2.6.0"
+    "webpack-hot-middleware": "^2.6.0",
+    "yargs": "^3.31.0"
   }
 }

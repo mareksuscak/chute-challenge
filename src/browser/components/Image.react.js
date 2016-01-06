@@ -45,7 +45,9 @@ class Image extends Component {
 
         <section className="meta">
           <img className="avatar" src={this.props.author.avatarUrl}/>
-          <span className="username">{this.props.author.username}</span>
+          <span className="username">
+            {this.props.author.username}
+          </span>
           {this.renderServiceIcon()}
         </section>
 

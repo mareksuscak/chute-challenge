@@ -14,10 +14,6 @@ const masonryOptions = {
 };
 
 class Gallery extends Component {
-  constructor(props, context) {
-    super(props, context);
-  }
-
   componentDidMount() {
     /* BaguetteBox.run('.image header', {
       // Pick up all links from the header no matter what the href is holding.

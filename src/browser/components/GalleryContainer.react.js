@@ -13,6 +13,7 @@ class GalleryContainer extends Component {
       assets: [],
       loadedPageCount: 0,
       hasMorePages: false,
+      tags: '',
     };
   }
 
@@ -56,6 +57,7 @@ class GalleryContainer extends Component {
 
   loadMore() {
     const opts = {
+      tags: this.state.tags,
       page: this.state.loadedPageCount + 1,
     };
     AlbumApi.fetchAssets('aACiujyl', opts)
