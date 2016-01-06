@@ -6,9 +6,23 @@ In order to run the project you'll need Node.js 4.x LTS with pretty much any ver
 
 ```shell
 npm install && npm start
+... or ...
+npm install && npm start-dev
 ```
 
+That will start the development server with hot component replacement feature turned on.
+
 Navigate to [http://localhost:8000](http://localhost:8000).
+
+# Production optimized site
+
+If what you desire is a production optimized version run the commands:
+
+```shell
+npm install && npm run start-prod
+```
+
+The server starts on exactly the same port.
 
 # Updating fontello
 
