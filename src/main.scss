@@ -1,6 +1,7 @@
 // Remember to use rems and ems. http://css-tricks.com/rems-ems.
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import './styles/variables';
 
 // Goodness. https://github.com/AllThingsSmitty/css-protips#inherit-box-sizing
 html {
@@ -12,13 +13,13 @@ html {
 }
 
 body {
-  color: #333;
-  font-family: 'Open Sans','sans-serif';
+  color: $primary-color;
+  font-family: $font-stack;
   font-size: 16px;
   line-height: 1.5;
 }
 
-header img {
+.container > header img {
   max-width: 100%;
   height: auto;
 }

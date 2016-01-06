@@ -15,10 +15,19 @@ class Image extends Component {
     this.setState({ removed: true });
   }
 
+  wrapIcon(icon) {
+    return (
+      <a className="service-link" href={this.props.importUrl} target="_blank">
+        {icon}
+      </a>
+    );
+  }
+
   renderServiceIcon() {
     if (['instagram', 'twitter'].indexOf(this.props.service) >= 0) {
       const className = classNames('icon', `icon-${this.props.service}`);
-      return <i className={className}/>;
+      const icon = <i className={className}/>;
+      return this.props.importUrl ? this.wrapIcon(icon) : icon;
     }
   }
 
@@ -30,18 +39,18 @@ class Image extends Component {
       <article className={className}>
         <header>
           <a href={this.props.url}>
-            <img src={`${this.props.url}/315x150`} onError={() => this.handleImageRemoved()}/>
+            <img src={`${this.props.url}/311x313`} onError={() => this.handleImageRemoved()}/>
           </a>
         </header>
 
-        <div>
-          <img src={this.props.author.avatarUrl}/>
-          <span>{this.props.author.username}</span>
+        <section className="meta">
+          <img className="avatar" src={this.props.author.avatarUrl}/>
+          <span className="username">{this.props.author.username}</span>
           {this.renderServiceIcon()}
-        </div>
+        </section>
 
         <footer>
-          <p>{this.props.caption}</p>
+          <p className="caption">{this.props.caption}</p>
         </footer>
       </article>
     );
