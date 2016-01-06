@@ -10,6 +10,8 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 
 module.exports = {
   devtool: isDevelopment ? 'cheap-module-source-map' : '',
+  cache: isDevelopment,
+  debug: isDevelopment,
   entry: isDevelopment ? [
     'webpack-hot-middleware/client',
     './src/browser/main'
