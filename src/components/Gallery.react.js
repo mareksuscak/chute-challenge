@@ -10,6 +10,7 @@ const masonryOptions = {
   itemSelector: '.image',
   columnWidth: 315,
   gutter: 35,
+  isFitWidth: true,
 };
 
 class Gallery extends Component {
