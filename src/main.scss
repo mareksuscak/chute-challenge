@@ -19,7 +19,12 @@ body {
   line-height: 1.5;
 }
 
-.container > header img {
+.container > header {
   max-width: 100%;
-  height: auto;
+  margin-bottom: 40px;
+
+  > img {
+    max-width: inherit;
+    height: auto;
+  }
 }
