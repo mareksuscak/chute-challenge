@@ -15,7 +15,7 @@ class Image extends Component {
     this.setState({ removed: true });
   }
 
-  wrapIcon(icon) {
+  wrapServiceIcon(icon) {
     return (
       <a className="service-link" href={this.props.importUrl} target="_blank">
         {icon}
@@ -27,7 +27,7 @@ class Image extends Component {
     if (['instagram', 'twitter'].indexOf(this.props.service) >= 0) {
       const className = classNames('icon', `icon-${this.props.service}`);
       const icon = <i className={className}/>;
-      return this.props.importUrl ? this.wrapIcon(icon) : icon;
+      return this.props.importUrl ? this.wrapServiceIcon(icon) : icon;
     }
   }
 
