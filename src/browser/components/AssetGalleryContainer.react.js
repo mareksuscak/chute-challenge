@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Component from 'react-pure-render/component';
 import AssetGallery from './AssetGallery.react';
 import InfiniteScroll from './InfiniteScroll.react';
 import AlbumApi from '../api/albumApi';

@@ -1,5 +1,6 @@
 import './AssetGallery.scss';
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import Component from 'react-pure-render/component';
 import AssetCard from './AssetCard.react';
 import map from 'lodash/collection/map';
 import AssetSchema from '../schemas/asset';
