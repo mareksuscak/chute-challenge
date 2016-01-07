@@ -49,7 +49,7 @@ class AssetGalleryContainer extends Component {
     this.setState(newState);
   }
 
-  handleApiError(error) {
+  handleApiError(/* error */) {
     // TODO
   }
 
