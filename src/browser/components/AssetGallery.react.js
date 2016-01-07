@@ -4,7 +4,6 @@ import Component from 'react-pure-render/component';
 import AssetCard from './AssetCard.react';
 import map from 'lodash/collection/map';
 import AssetSchema from '../schemas/asset';
-// import BaguetteBox from 'baguettebox.js';
 import Masonry from 'react-masonry-component';
 
 const masonryOptions = {
@@ -18,17 +17,6 @@ class AssetGallery extends Component {
   static propTypes = {
     assets: PropTypes.arrayOf(PropTypes.shape(AssetSchema)).isRequired,
   };
-
-  componentDidMount() {
-    /* BaguetteBox.run('.image header', {
-      // Pick up all links from the header no matter what the href is holding.
-      filter: /.+/i,
-    });*/
-  }
-
-  componentWillUnmount() {
-    // BaguetteBox.destroy();
-  }
 
   renderAssetCollection() {
     return map(this.props.assets, (asset) =>
