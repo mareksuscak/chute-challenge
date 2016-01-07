@@ -34,4 +34,13 @@
     overflow: hidden;
     word-wrap: break-word;
   }
+
+  > .caption a {
+    text-decoration: none;
+    color: #0084B4;
+  }
+
+  > .caption a:hover {
+    text-decoration: underline;
+  }
 }
