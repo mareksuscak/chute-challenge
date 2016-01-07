@@ -51,7 +51,7 @@ class AssetGalleryContainer extends Component {
   }
 
   handleApiError(/* error */) {
-    // TODO
+    // TODO: Whooops, we would need to handle API errors here.
   }
 
   loadMore() {
