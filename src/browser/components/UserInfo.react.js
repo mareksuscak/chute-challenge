@@ -12,7 +12,7 @@ class UserInfo extends Component {
 
   state = {
     avatarRemoved: false,
-  }
+  };
 
   handleLoadError() {
     this.setState({ avatarRemoved: true });
