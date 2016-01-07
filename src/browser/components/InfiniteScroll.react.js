@@ -25,15 +25,14 @@ class InfiniteScroll extends Component {
       return;
     }
 
-    this.props.loadMore();
+    if (this.isNearBottom()) {
+      this.props.loadMore();
+    }
   }
 
-  isInsideViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.bottom > 0 &&
-      rect.right > 0 &&
-      rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
-      rect.top < (window.innerHeight || document.documentElement.clientHeight);
+  isNearBottom() {
+    const rect = document.body.getBoundingClientRect();
+    return (rect.bottom - document.documentElement.clientHeight) <= (rect.height / 2);
   }
 
   render() {
