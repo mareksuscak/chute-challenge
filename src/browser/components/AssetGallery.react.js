@@ -1,19 +1,23 @@
-import './Gallery.scss';
+import './AssetGallery.scss';
 import React, { Component, PropTypes } from 'react';
-import Image from './Image.react';
+import AssetCard from './AssetCard.react';
 import map from 'lodash/collection/map';
 import AssetSchema from '../schemas/asset';
 // import BaguetteBox from 'baguettebox.js';
 import Masonry from 'react-masonry-component';
 
 const masonryOptions = {
-  itemSelector: '.image',
+  itemSelector: '.asset-card',
   columnWidth: 315,
   gutter: 35,
   isFitWidth: true,
 };
 
-class Gallery extends Component {
+class AssetGallery extends Component {
+  static propTypes = {
+    assets: PropTypes.arrayOf(PropTypes.shape(AssetSchema)).isRequired,
+  };
+
   componentDidMount() {
     /* BaguetteBox.run('.image header', {
       // Pick up all links from the header no matter what the href is holding.
@@ -27,14 +31,14 @@ class Gallery extends Component {
 
   renderAssetCollection() {
     return map(this.props.assets, (asset) =>
-      <Image {...asset} key={asset.shortcut}/>
+      <AssetCard {...asset} key={asset.shortcut}/>
     );
   }
 
   render() {
     return (
       <Masonry
-        className={'gallery'}
+        className={'asset-gallery'}
         elementType={'section'}
         options={masonryOptions}
         disableImagesLoaded={false}
@@ -45,8 +49,4 @@ class Gallery extends Component {
   }
 }
 
-Gallery.propTypes = {
-  assets: PropTypes.arrayOf(PropTypes.shape(AssetSchema)).isRequired,
-};
-
-export default Gallery;
+export default AssetGallery;

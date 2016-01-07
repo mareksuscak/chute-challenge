@@ -6,14 +6,14 @@ import 'baguettebox.js/dist/baguettebox.min.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import GalleryContainer from './components/GalleryContainer.react';
+import AssetGalleryContainer from './components/AssetGalleryContainer.react';
 
 ReactDOM.render(
   <div className="container">
     <header>
       <img src="assets/image/header.jpg"/>
     </header>
-    <GalleryContainer/>
+    <AssetGalleryContainer/>
   </div>,
   document.getElementById('root')
 );

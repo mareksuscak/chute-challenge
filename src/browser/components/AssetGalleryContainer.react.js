@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Gallery from './Gallery.react';
+import AssetGallery from './AssetGallery.react';
 import InfiniteScroll from './InfiniteScroll.react';
 import AlbumApi from '../api/albumApi';
 import map from 'lodash/collection/map';
 
 // Container component inspired by:
 // https://medium.com/@learnreact/container-components-c0e67432e005#.rkxj8u626
-class GalleryContainer extends Component {
+class AssetGalleryContainer extends Component {
   state = {
     assets: [],
     loadedPageCount: 0,
@@ -67,10 +67,10 @@ class GalleryContainer extends Component {
     const { assets } = this.state;
     return (
       <InfiniteScroll hasMore={this.state.hasMorePages} loadMore={this.loadMore}>
-        <Gallery assets={assets}/>
+        <AssetGallery assets={assets}/>
       </InfiniteScroll>
     );
   }
 }
 
-export default GalleryContainer;
+export default AssetGalleryContainer;

@@ -1,16 +1,19 @@
 // Remember to use rems and ems. http://css-tricks.com/rems-ems.
+// Using RSCSS (http://rscss.io)
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 @import './styles/variables';
+@import './styles/mixins';
 
-// Goodness. https://github.com/AllThingsSmitty/css-protips#inherit-box-sizing
-html {
-  box-sizing: border-box;
-}
+// https://github.com/AllThingsSmitty/css-protips#inherit-box-sizing
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+// https://davidwalsh.name/html5-hidden
+*[hidden] { display: none; }
+
+// http://nicolasgallagher.com/micro-clearfix-hack/
+._clearfix { @include clearfix; }
 
 body {
   color: $primary-color;
@@ -27,4 +30,8 @@ body {
     max-width: inherit;
     height: auto;
   }
+}
+
+.container > .asset-gallery {
+  margin: 0 auto;
 }

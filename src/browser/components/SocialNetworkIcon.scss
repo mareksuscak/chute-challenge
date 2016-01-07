@@ -1,0 +1,19 @@
+@import '../styles/variables';
+
+.social-network-icon {
+  > .icon {
+    color: $primary-color;
+    font-size: 1.25em;
+  }
+}
+
+a.social-network-icon {
+  color: $primary-color;
+  opacity: 1;
+  transition: opacity 0.4s;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,36 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+// Generally for user-info container
+.user-info {
+  @include clearfix;
+
+  > .avatar {
+    float: left;
+    max-width: 45px;
+    max-height: 45px;
+    margin-right: 9px;
+  }
+
+  > .username {
+    float: left;
+    line-height: 45px;
+    font-size: 0.875em;
+    font-weight: bolder;
+  }
+}
+
+// User-info is either a link or a div
+a.user-info {
+  display: block;
+  color: $primary-color;
+
+  > .username {
+    opacity: 1;
+    transition: opacity 0.4s;
+  }
+
+  &:hover > .username {
+    opacity: 0.8;
+  }
+}

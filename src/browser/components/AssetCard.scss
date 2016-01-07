@@ -1,0 +1,36 @@
+@import '../styles/mixins';
+@import '../styles/variables';
+
+.asset-card {
+  border: 2px solid $border-color;
+  border-radius: 2px;
+  overflow: hidden;
+
+  > .thumbnail {
+    border-bottom: 2px solid $border-color;
+    display: block;
+    height: 315px;
+    max-height: 315px;
+    max-width: 311px;
+    width: 311px;
+  }
+
+  > .meta {
+    margin: 13px 13px 0 13px;
+    max-height: 45px;
+    position: relative;
+  }
+
+  > .meta .social-network-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  > .caption {
+    font-size: 0.8125em;
+    margin: 15px 13px 13px 13px;
+    max-height: 54px;
+    overflow: hidden;
+  }
+}
