@@ -1,5 +1,5 @@
 // Taken from https://github.com/bmac/instagram-formatter and updated by mareksuscak
-import reduce from 'lodash/collection/reduce';
+import pipelineEach from './pipelineEach';
 
 function formatUrl(tweet) {
   // ref: http://stackoverflow.com/questions/19625183/js-find-urls-in-text-make-links
@@ -30,8 +30,7 @@ function autoLink(text) {
     formatUsername,
     formatHashtag,
   ];
-
-  return reduce(fns, (acc, fn) => fn(acc), text);
+  return pipelineEach(fns, text);
 }
 
 export default { autoLink };
