@@ -12,6 +12,7 @@ class AssetGalleryContainer extends Component {
     assets: [],
     loadedPageCount: 0,
     hasMorePages: false,
+    isLoadingInitialBatch: true,
     tags: '',
   };
 
@@ -38,7 +39,8 @@ class AssetGalleryContainer extends Component {
       .slice()
       .concat(newAssets);
 
-    this.setState({ assets });
+    this.setState({ assets, isLoadingInitialBatch: false });
+
     return response;
   }
 
@@ -67,9 +69,13 @@ class AssetGalleryContainer extends Component {
 
   render() {
     const { assets } = this.state;
+    const element = this.state.isLoadingInitialBatch
+      ? (<div className="loader"><i className="icon icon-spin2 animate-spin"/></div>)
+      : <AssetGallery assets={assets}/>;
+
     return (
       <InfiniteScroll hasMore={this.state.hasMorePages} loadMore={() => this.loadMore()}>
-        <AssetGallery assets={assets}/>
+        {element}
       </InfiniteScroll>
     );
   }
