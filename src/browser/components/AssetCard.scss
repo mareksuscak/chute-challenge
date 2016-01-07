@@ -12,7 +12,13 @@
     height: 315px;
     max-height: 315px;
     max-width: 311px;
+    overflow: hidden;
     width: 311px;
+  }
+
+  > .thumbnail img {
+    max-height: 313px;
+    max-width: inherit;
   }
 
   > .meta {
