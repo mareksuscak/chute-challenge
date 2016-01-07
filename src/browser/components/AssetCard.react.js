@@ -34,8 +34,12 @@ class AssetCard extends Component {
   render() {
     return (
       <article className="asset-card" hidden={this.state.hidden}>
-        <a className="thumbnail" href={this.props.url}>
+        <a className="thumbnail" href={`#${this.props.shortcut}`}>
           <img src={`${this.props.url}/311x313`} onError={(e) => this.handleLoadError(e)}/>
+        </a>
+
+        <a href="#_" className="lightbox" id={this.props.shortcut}>
+          <img src={this.props.url}/>
         </a>
 
         <section className="meta">

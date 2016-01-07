@@ -21,6 +21,30 @@
     max-width: inherit;
   }
 
+  // Pure CSS lightbox. http://codepen.io/gschier/pen/HCoqh
+  > .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  > .lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    margin-top: 2%;
+  }
+
+  > .lightbox:target {
+    outline: none;
+    display: block;
+  }
+
   > .meta {
     margin: 13px 13px 0 13px;
     max-height: 45px;
