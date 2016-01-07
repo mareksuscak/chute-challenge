@@ -39,6 +39,7 @@ class AssetGalleryContainer extends Component {
       .concat(newAssets);
 
     this.setState({ assets });
+    return response;
   }
 
   updatePageCount(response) {
@@ -67,7 +68,7 @@ class AssetGalleryContainer extends Component {
   render() {
     const { assets } = this.state;
     return (
-      <InfiniteScroll hasMore={this.state.hasMorePages} loadMore={this.loadMore}>
+      <InfiniteScroll hasMore={this.state.hasMorePages} loadMore={() => this.loadMore()}>
         <AssetGallery assets={assets}/>
       </InfiniteScroll>
     );
