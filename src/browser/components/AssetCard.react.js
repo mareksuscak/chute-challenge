@@ -1,5 +1,6 @@
 import './AssetCard.scss';
-import React, { Component } from 'react';
+import React from 'react';
+import Component from 'react-pure-render/component';
 import AssetSchema from '../schemas/asset';
 import SocialNetworkIcon from './SocialNetworkIcon.react';
 import UserInfo from './UserInfo.react';
