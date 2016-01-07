@@ -8,6 +8,6 @@ const transformers = {
 
 export default function toSocialProfileUri(username, service) {
   if (!includes(keys(transformers), service)) return null;
-  const transformer = transformers[service];
-  return transformer(username);
+  const transform = transformers[service];
+  return transform(username);
 }

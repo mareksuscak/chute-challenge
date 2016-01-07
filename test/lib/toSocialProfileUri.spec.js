@@ -1,5 +1,5 @@
-import toSocialProfileUri from '../../src/browser/lib/toSocialProfileUri';
 import { expect } from 'chai';
+import toSocialProfileUri from '../../src/browser/lib/toSocialProfileUri';
 
 describe('toSocialProfileUri', () => {
   it('should return a link to twitter profile when service type is twitter', () => {

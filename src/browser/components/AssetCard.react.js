@@ -4,6 +4,14 @@ import Component from 'react-pure-render/component';
 import AssetSchema from '../schemas/asset';
 import SocialNetworkIcon from './SocialNetworkIcon.react';
 import UserInfo from './UserInfo.react';
+import instagramText from '../lib/instagramText';
+import twitterText from 'twitter-text';
+
+const formatters = {
+  instagram: (t) => instagramText.autoLink(t),
+  twitter: (t) => twitterText.autoLink(twitterText.htmlEscape(t)),
+  uploaded: (t) => t,
+};
 
 class AssetCard extends Component {
   static propTypes = AssetSchema;
@@ -15,6 +23,12 @@ class AssetCard extends Component {
   handleLoadError(/* error */) {
     // Hide the asset card once the image fails to load.
     this.setState({ hidden: true });
+  }
+
+  createCaptionMarkup() {
+    const text = this.props.caption ? this.props.caption : '';
+    const format = formatters[this.props.service];
+    return { __html: format(text) };
   }
 
   render() {
@@ -29,7 +43,7 @@ class AssetCard extends Component {
           <SocialNetworkIcon type={this.props.service} href={this.props.importUrl}/>
         </section>
 
-        <p className="caption">{this.props.caption}</p>
+        <p className="caption" dangerouslySetInnerHTML={this.createCaptionMarkup()}></p>
       </article>
     );
   }
